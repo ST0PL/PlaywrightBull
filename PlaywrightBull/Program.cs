@@ -1,6 +1,5 @@
 ﻿using Microsoft.Playwright;
 using PlaywrightBull.Bullmc;
-using System.Globalization;
 
 namespace PlaywrightBull
 {
@@ -8,9 +7,8 @@ namespace PlaywrightBull
     {
         static async Task Main()
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US", false);
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            BullmcClient bullmc = await BullmcClient.CreateAsync(new BrowserTypeLaunchOptions { Headless = false });
+            BullmcClient bullmc = await BullmcClient.CreateAsync(new BrowserTypeLaunchOptions { Headless = true });
             await bullmc.InitAsync();
             await CLI.Main.Show(bullmc);
         }

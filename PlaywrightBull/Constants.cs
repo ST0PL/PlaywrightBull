@@ -47,6 +47,6 @@
 
             """;
 
-        public const string GithubPage = "https://github.com";
+        public const string GithubPage = "https://github.com/ST0PL/PlaywrightBull";
     }
 }
