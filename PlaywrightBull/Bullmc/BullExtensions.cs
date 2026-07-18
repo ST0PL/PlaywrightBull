@@ -108,7 +108,9 @@ namespace PlaywrightBull.Bullmc
             {
                 await bullmc.GotoMainAsync();
                 var historyItemsLocator = bullmc.Locator(".swiper-slide .card-body");
-                await historyItemsLocator.First.ScrollIntoViewIfNeededAsync(); // move carousel into viewport
+                try { await historyItemsLocator.First.ScrollIntoViewIfNeededAsync(new() { Timeout = 5000 }); } // move carousel into viewport}
+                catch (TimeoutException) { return []; }
+
                 var historyItemLocators = await historyItemsLocator.AllAsync();
 
                 List<HistoryItem> historyItems = [];
