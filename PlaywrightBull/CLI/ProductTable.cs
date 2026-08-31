@@ -54,7 +54,7 @@ namespace PlaywrightBull.CLI
                 for (int i = 0; i < products.Count; i++)
                     table.Add(row => row.Add(new Cell((i+1).ToString(), padLeft, padRight))
                                         .Add(new Cell(products[i].Name ?? string.Empty, padLeft, padRight))
-                                        .Add(new Cell($"{products[i].Price?.Value} {products[i].Price?.Currency}", padLeft, padRight)));
+                                        .Add(new Cell(products[i].Price?.Text ?? "Unknown", padLeft, padRight)));
 
                 ConsoleKeyInfo keyInfo;
 

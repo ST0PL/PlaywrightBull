@@ -61,20 +61,20 @@ namespace PlaywrightBull.Resources.Categories {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на All.
-        /// </summary>
-        internal static string All {
-            get {
-                return ResourceManager.GetString("All", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Cases.
         /// </summary>
         internal static string Cases {
             get {
                 return ResourceManager.GetString("Cases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Gems.
+        /// </summary>
+        internal static string Gems {
+            get {
+                return ResourceManager.GetString("Gems", resourceCulture);
             }
         }
         

@@ -120,11 +120,11 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="BullmcClientCreationFailed" xml:space="preserve">
+    <value>The creation of the Bullmc client failed.</value>
+  </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
-  </data>
-  <data name="RecentPurchaces" xml:space="preserve">
-    <value>Recent purchases</value>
   </data>
   <data name="Products" xml:space="preserve">
     <value>Products</value>

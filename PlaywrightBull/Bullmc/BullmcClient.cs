@@ -4,13 +4,13 @@ namespace PlaywrightBull.Bullmc
 {
     internal class BullmcClient : IAsyncDisposable
     {
-        private readonly Lock _disposeLock = new();
         private const string _headUrl = "https://bullmc.net/";
 
         private IPlaywright? _playwright;
         private IBrowser? _browser;
-        private IPage _page;
         private IReadOnlyList<ILocator> _navItems = null!;
+
+        private readonly IPage _page;
 
         public Uri HeadUrl { get; }
 
@@ -25,51 +25,39 @@ namespace PlaywrightBull.Bullmc
 
         public async Task InitAsync()
         {
-            string navSelector = ".spirit-shop-category";
-            await _page.Locator(navSelector).First.WaitForAsync();
+            string navSelector = ".flex.gap-4.items-center.flex-wrap > button";
             _navItems = await _page.Locator(navSelector).AllAsync();
         }
 
         public ILocator Locator(string selector, PageLocatorOptions? options = default)
             => _page.Locator(selector, options);
 
-        public async Task GotoAsync(string url, PageGotoOptions? options = default)
+        public Task GotoAsync(string url, PageGotoOptions? options = default)
         {
             UriBuilder uriBuilder = new(url);
 
             if (HeadUrl.Host != uriBuilder.Host)
                 throw new InvalidOperationException($"The host url must be \"{HeadUrl.Host}\".");
 
-            await _page.GotoAsync(url, options);
+            return _page.GotoAsync(url, options);
         }
 
-        public async Task GotoIfUrlNotEqualAsync(string url, PageGotoOptions? options = default)
+        public Task GotoIfUrlNotEqualAsync(string url, PageGotoOptions? options = default)
         {
             if (CurrentURL == url)
-                return;
+                return Task.CompletedTask;
 
-            await GotoAsync(url, options);
+            return GotoAsync(url, options);
         }
 
-        public async Task GotoMainAsync()
-            => await GotoIfUrlNotEqualAsync(_headUrl);
+        public Task GotoMainAsync()
+            => GotoIfUrlNotEqualAsync(_headUrl);
 
-        public async Task ClickNavButton(int index)
-            => await _navItems[index].ClickAsync();
+        public Task PressAsync(string key, KeyboardPressOptions? options = default)
+            => _page.Keyboard.PressAsync(key, options);
 
-        public async ValueTask DisposeAsync()
-        {
-            lock (_disposeLock)
-            {
-                if(_browser == null || _playwright == null)
-                    return;
-
-                _playwright.Dispose();
-                _playwright = null;
-            }
-            await _browser.DisposeAsync();
-            _browser = null;
-        }
+        public Task ClickNavButton(int index, LocatorClickOptions? options = null)
+            => _navItems[index].ClickAsync(options);
 
         public static async Task<BullmcClient> CreateAsync(BrowserTypeLaunchOptions? browserOptions = default)
         {
@@ -93,6 +81,17 @@ namespace PlaywrightBull.Bullmc
             }
 
             return new(playwright, browser, page);
+        }
+        public async ValueTask DisposeAsync()
+        {
+            if (_browser == null || _playwright == null)
+                return;
+
+            _playwright.Dispose();
+            _playwright = null;
+
+            await _browser.DisposeAsync();
+            _browser = null;
         }
     }
 }

@@ -70,6 +70,15 @@ namespace PlaywrightBull.Resources.Main {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на The creation of the Bullmc client failed..
+        /// </summary>
+        internal static string BullmcClientCreationFailed {
+            get {
+                return ResourceManager.GetString("BullmcClientCreationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Exit.
         /// </summary>
         internal static string Exit {
@@ -84,15 +93,6 @@ namespace PlaywrightBull.Resources.Main {
         internal static string Products {
             get {
                 return ResourceManager.GetString("Products", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Recent purchases.
-        /// </summary>
-        internal static string RecentPurchaces {
-            get {
-                return ResourceManager.GetString("RecentPurchaces", resourceCulture);
             }
         }
     }
