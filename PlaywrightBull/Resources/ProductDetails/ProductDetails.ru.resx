@@ -123,8 +123,8 @@
   <data name="Image" xml:space="preserve">
     <value>Изображение</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Другие товары</value>
+  <data name="Related" xml:space="preserve">
+    <value>Связанные товары</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Нажмите "R" для обновления других товаров.</value>

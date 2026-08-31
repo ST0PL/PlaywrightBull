@@ -27,11 +27,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Common.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resources\History\History.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>History.resx</DependentUpon>
-    </Compile>
     <Compile Update="Resources\Main\Main.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -61,10 +56,6 @@
     <EmbeddedResource Update="Resources\Common\Common.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Common.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Resources\History\History.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>History.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\Main\Main.resx">
       <Generator>ResXFileCodeGenerator</Generator>

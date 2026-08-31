@@ -61,19 +61,6 @@ namespace PlaywrightBull.Resources.ProductTable {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на     ▄▄     ▄▄▄▄      ▄▄▄▄                                                    ▄▄                                         
-        ///   ████    ▀▀██      ▀▀██                                                    ██                        ██               
-        ///   ████      ██        ██                ██▄███▄    ██▄████   ▄████▄    ▄███▄██  ██    ██   ▄█████▄  ███████   ▄▄█████▄ 
-        ///  ██  ██     ██        ██                ██▀  ▀██   ██▀      ██▀  ▀██  ██▀  ▀██  ██    ██  ██▀    ▀    ██      ██▄▄▄▄ ▀ 
-        ///  ██████     ██        █ [остаток строки не уместился]&quot;;.
-        /// </summary>
-        internal static string All {
-            get {
-                return ResourceManager.GetString("All", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на     ▄▄▄▄                                          
         ///  ██▀▀▀▀█                                         
         /// ██▀        ▄█████▄  ▄▄█████▄   ▄████▄   ▄▄█████▄ 
@@ -94,6 +81,21 @@ namespace PlaywrightBull.Resources.ProductTable {
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на     ▄▄▄▄                                
+        ///  ██▀▀▀▀█                               
+        /// ██         ▄████▄   ████▄██▄  ▄▄█████▄ 
+        /// ██  ▄▄▄▄  ██▄▄▄▄██  ██ ██ ██  ██▄▄▄▄ ▀ 
+        /// ██  ▀▀██  ██▀▀▀▀▀▀  ██ ██ ██   ▀▀▀▀██▄ 
+        ///  ██▄▄▄██  ▀██▄▄▄▄█  ██ ██ ██  █▄▄▄▄▄██ 
+        ///    ▀▀▀▀     ▀▀▀▀▀   ▀▀ ▀▀ ▀▀   ▀▀▀▀▀▀  .
+        /// </summary>
+        internal static string Gems {
+            get {
+                return ResourceManager.GetString("Gems", resourceCulture);
             }
         }
         

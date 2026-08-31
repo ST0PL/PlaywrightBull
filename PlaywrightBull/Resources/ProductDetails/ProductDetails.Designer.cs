@@ -79,20 +79,20 @@ namespace PlaywrightBull.Resources.ProductDetails {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Other products.
-        /// </summary>
-        internal static string Other {
-            get {
-                return ResourceManager.GetString("Other", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Press &quot;R&quot; to refresh other products..
         /// </summary>
         internal static string Refresh {
             get {
                 return ResourceManager.GetString("Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Related products.
+        /// </summary>
+        internal static string Related {
+            get {
+                return ResourceManager.GetString("Related", resourceCulture);
             }
         }
     }

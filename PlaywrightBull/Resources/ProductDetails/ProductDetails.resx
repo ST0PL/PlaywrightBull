@@ -123,8 +123,8 @@
   <data name="Image" xml:space="preserve">
     <value>Image</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Other products</value>
+  <data name="Related" xml:space="preserve">
+    <value>Related products</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Press "R" to refresh other products.</value>

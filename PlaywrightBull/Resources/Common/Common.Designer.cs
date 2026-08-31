@@ -61,11 +61,20 @@ namespace PlaywrightBull.Resources.Common {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Press any key to go back..
+        ///   Ищет локализованную строку, похожую на Press any key to go back.....
         /// </summary>
         internal static string AnyKey {
             get {
                 return ResourceManager.GetString("AnyKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Press any key to continue.....
+        /// </summary>
+        internal static string AnyKeyContinue {
+            get {
+                return ResourceManager.GetString("AnyKeyContinue", resourceCulture);
             }
         }
         

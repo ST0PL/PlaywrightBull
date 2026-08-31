@@ -13,7 +13,6 @@ namespace PlaywrightBull.CLI
                 int selection = Common.ShowNavMenu(
                     Constants.MainTitle,
                     Resources.Main.Main.Products,
-                    Resources.Main.Main.RecentPurchaces,
                     Resources.Main.Main.About,
                     Resources.Main.Main.Exit);
 
@@ -23,12 +22,9 @@ namespace PlaywrightBull.CLI
                         await Categories.Show(client);
                         break;
                     case 2:
-                        await History.Show(client);
-                        break;
-                    case 3:
                         About.Show();
                         break;
-                    case 4:
+                    case 3:
                         isRunning = false;
                         break;
                     default:
